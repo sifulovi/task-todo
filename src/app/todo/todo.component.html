@@ -28,7 +28,7 @@
     <button (click)="openModal()" class="uk-button uk-button-default" uk-toggle="target: #modal-example">Create Todo</button>
 </div>
 <br>
-<div class="uk-child-width-expand@s uk-text-center uk-margin-medium-bottom" uk-grid>
+<div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500" class="uk-child-width-expand@s uk-text-center uk-margin-medium-bottom" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-body">
             Undone Todo's
