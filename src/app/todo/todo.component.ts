@@ -11,7 +11,7 @@ export class TodoComponent implements OnInit {
 
     Todo: Todo;
     TodoList: Todo[];
-    modalTitle: string = "Create Todo";
+    modalTitle: string = 'Create Todo';
     DoneTodoList: Todo [];
     UnDoneTodoList: Todo [];
 
@@ -20,7 +20,6 @@ export class TodoComponent implements OnInit {
 
     ngOnInit(): void {
         this.getTodoList();
-
     }
 
     getTodoList() {
@@ -40,7 +39,6 @@ export class TodoComponent implements OnInit {
     openModal() {
         this.modalTitle = 'Add Todo';
     }
-
 
     SaveOrUpdateDept(Todo: ITodo) {
         if (this.Todo.Id === -1) {
@@ -66,5 +64,4 @@ export class TodoComponent implements OnInit {
         this.service.done(Todo);
         this.getTodoList();
     }
-
 }

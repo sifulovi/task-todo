@@ -18,6 +18,6 @@ import {FormsModule} from '@angular/forms';
     FormsModule
   ],
   providers: [TodoService],
-  bootstrap: [AppComponent]
+  bootstrap: [TodoComponent]
 })
 export class AppModule { }
