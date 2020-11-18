@@ -10,7 +10,6 @@ import {TodoService} from './service/todo.service';
 export class TodoComponent implements OnInit {
 
     Todo: Todo;
-    TodoList: Todo[];
     modalTitle: string = 'Create Todo';
     DoneTodoList: Todo [];
     UnDoneTodoList: Todo [];
@@ -60,6 +59,7 @@ export class TodoComponent implements OnInit {
         this.service.delete(id);
         this.getTodoList();
         this.Todo = {Id: 0, Task: '', Done: false};
+        UIkit.notification({message: 'Save Successfully', pos: 'top-right', status: 'success'});
     }
 
     doneTask(Todo: Todo) {
