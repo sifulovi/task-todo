@@ -1,0 +1,33 @@
+td {
+    font-style: italic;
+    color: black;
+    font-family: "Microsoft Sans Serif", serif;
+}
+th {
+    font-size: 18px;
+    color: black;
+    font-family: "Operator Mono Bold", serif;
+    font-weight: bold;
+}
+.done-todo {
+    font-size: 20px;
+    font-weight: bold;
+    color: blueviolet;
+    font-family: Inconsolata, serif;
+}
+.btn-custom {
+    font-family: Consolas, serif;
+    font-weight: bold;
+    color: white;
+    background: slateblue;
+}
+
+.pointer-cursor{
+    cursor: pointer;
+}
+.undone-todo {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkred;
+    font-family: Inconsolata, serif;
+}

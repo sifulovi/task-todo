@@ -39,13 +39,17 @@ export class TodoComponent implements OnInit {
         this.modalTitle = 'Add Todo';
     }
 
+    closeModal() {
+        this.Todo = new Todo(0, '', false);
+    }
+
     SaveOrUpdateDept(Todo: ITodo) {
         if (this.Todo.Id === -1) {
             this.service.add(Todo);
-            //UIkit.notification({message: 'Save Successfully', pos: 'top-right', status: 'success'});
+          //  UIkit.notification({message: 'Save Successfully', pos: 'top-right', status: 'success'});
         } else {
             this.service.update(Todo);
-          //  UIkit.notification({message: 'Update Successfully', pos: 'top-right', status: 'success'});
+           //UIkit.notification({message: 'Update Successfully', pos: 'top-right', status: 'success'});
         }
         this.getTodoList();
     }
@@ -59,7 +63,7 @@ export class TodoComponent implements OnInit {
         this.service.delete(id);
         this.getTodoList();
         this.Todo = {Id: 0, Task: '', Done: false};
-     //   UIkit.notification({message: 'Save Successfully', pos: 'top-right', status: 'success'});
+        //   UIkit.notification({message: 'Save Successfully', pos: 'top-right', status: 'success'});
     }
 
     doneTask(Todo: Todo) {

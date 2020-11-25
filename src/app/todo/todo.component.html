@@ -14,8 +14,8 @@
         </div>
 
         <p class="uk-text-right">
-            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            <button (click)="SaveOrUpdateDept(Todo)" class="uk-button uk-button-primary " type="button">Save</button>
+            <button (click)="closeModal()" class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button (click)="SaveOrUpdateDept(Todo)" class="uk-button uk-button-primary uk-modal-close" type="button">Save</button>
         </p>
     </div>
 </div>
@@ -25,13 +25,13 @@
     <h2 class="uk-text-lead uk-text-center">My Todo's</h2>
 </div>
 <div>
-    <button (click)="openModal()" class="uk-button uk-button-default" uk-toggle="target: #modal-example">Create Todo</button>
+    <button (click)="openModal()" class="btn-custom uk-button uk-button-default" uk-toggle="target: #modal-example">Create Todo</button>
 </div>
 <br>
 <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500" class="uk-child-width-expand@s uk-text-center uk-margin-medium-bottom" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-body">
-            Undone Todo's
+            <span class="undone-todo"> Undone Todo's</span>
             <table class="uk-table uk-table-divider">
                 <thead>
                 <tr>
@@ -54,7 +54,7 @@
     </div>
     <div>
         <div class="uk-card uk-card-default uk-card-body">
-            Done Todo's
+            <span class="done-todo"> Done Todo's</span>
             <table class="uk-table uk-table-divider">
                 <thead>
                 <tr>
