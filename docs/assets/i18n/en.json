@@ -1,0 +1,12 @@
+{
+  "appTitle": "My Todo's",
+  "create-btn": "Create Todo",
+  "done-todo": "Done Todo's",
+  "un-done-todo": "UnDone Todo's",
+  "task-name": "Task",
+  "actions": "Actions",
+  "update-todo": "Update Todo",
+  "save-todo": "Save Todo",
+  "cancel": "Cancel",
+  "is-done": "IsDone?"
+}
