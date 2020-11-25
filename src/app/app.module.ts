@@ -6,9 +6,9 @@ import {AppComponent} from './app.component';
 import {TodoComponent} from './todo/todo.component';
 import {TodoService} from './todo/service/todo.service';
 import {FormsModule} from '@angular/forms';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -36,5 +36,5 @@ export class AppModule {
 
 // AOT compilation support
 export function httpTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http);
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
