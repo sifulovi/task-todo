@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ITodo, Todo} from './model/todo';
 import {TodoService} from './service/todo.service';
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Component({
     selector: 'app-todo',
@@ -14,11 +16,18 @@ export class TodoComponent implements OnInit {
     DoneTodoList: Todo [];
     UnDoneTodoList: Todo [];
 
-    constructor(private service: TodoService) {
+    constructor(private service: TodoService, public translate: TranslateService
+    ) {
+        translate.addLangs(['en', 'bd']);
+        translate.setDefaultLang('en');
     }
 
     ngOnInit(): void {
         this.getTodoList();
+    }
+
+    switchLang(lang: string) {
+        this.translate.use(lang);
     }
 
     getTodoList() {
@@ -46,10 +55,10 @@ export class TodoComponent implements OnInit {
     SaveOrUpdateDept(Todo: ITodo) {
         if (this.Todo.Id === -1) {
             this.service.add(Todo);
-          //  UIkit.notification({message: 'Save Successfully', pos: 'top-right', status: 'success'});
+            //  UIkit.notification({message: 'Save Successfully', pos: 'top-right', status: 'success'});
         } else {
             this.service.update(Todo);
-           //UIkit.notification({message: 'Update Successfully', pos: 'top-right', status: 'success'});
+            //UIkit.notification({message: 'Update Successfully', pos: 'top-right', status: 'success'});
         }
         this.getTodoList();
     }

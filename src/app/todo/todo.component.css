@@ -31,3 +31,8 @@ th {
     color: darkred;
     font-family: Inconsolata, serif;
 }
+
+.create-select {
+    display: flex;
+    justify-content: space-between;
+}

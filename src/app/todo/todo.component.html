@@ -2,7 +2,7 @@
     <div class="uk-modal-dialog uk-modal-body">
         <h2 class="uk-modal-title">{{modalTitle}}</h2>
         <div class="uk-margin">
-            <label class="uk-form-label" for="form-stacked-text">Task</label>
+            <label class="uk-form-label" for="form-stacked-text">{{'task-name' | translate}}</label>
             <div class="uk-form-controls uk-margin-small-top">
                 <input [(ngModel)]="Todo.Task" class="uk-input" id="form-stacked-text" type="text" placeholder="Task..">
             </div>
@@ -10,7 +10,7 @@
 
         <div class="uk-margin">
             <label><input class="uk-checkbox" [(ngModel)]="Todo.Done" [checked]="Todo.Done"
-                          type="checkbox"><strong>&nbsp; Is Done?</strong></label>
+                          type="checkbox"><strong> {{'is-done' | translate}}&nbsp;</strong></label>
         </div>
 
         <p class="uk-text-right">
@@ -19,24 +19,35 @@
         </p>
     </div>
 </div>
-
-
 <div class="uk-margin-medium-top">
-    <h2 class="uk-text-lead uk-text-center">My Todo's</h2>
+    <h2 class="uk-text-lead uk-text-center">{{'appTitle' | translate }}</h2>
 </div>
-<div>
-    <button (click)="openModal()" class="btn-custom uk-button uk-button-default" uk-toggle="target: #modal-example">Create Todo</button>
+<div class="create-select">
+    <div>
+        <button (click)="openModal()" class="btn-custom uk-button uk-button-default" uk-toggle="target: #modal-example">{{'create-btn' | translate}}</button>
+    </div>
+    <div>
+        <select class="uk-select"
+                #selectedLang
+                (change)="switchLang(selectedLang.value)">
+            <option *ngFor="let language of translate.getLangs()"
+                    [value]="language"
+                    [selected]="language === translate.currentLang">
+                {{ language }}
+            </option>
+        </select>
+    </div>
 </div>
 <br>
 <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500" class="uk-child-width-expand@s uk-text-center uk-margin-medium-bottom" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-body">
-            <span class="undone-todo"> Undone Todo's</span>
+            <span class="undone-todo"> {{'un-done-todo' | translate}}</span>
             <table class="uk-table uk-table-divider">
                 <thead>
                 <tr>
-                    <th>Task</th>
-                    <th>Actions</th>
+                    <th>{{'task-name' | translate}}</th>
+                    <th>{{'actions' | translate}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -54,12 +65,12 @@
     </div>
     <div>
         <div class="uk-card uk-card-default uk-card-body">
-            <span class="done-todo"> Done Todo's</span>
+            <span class="done-todo"> {{'done-todo' | translate}}</span>
             <table class="uk-table uk-table-divider">
                 <thead>
                 <tr>
-                    <th>Task</th>
-                    <th>Actions</th>
+                    <th>{{'task-name' | translate}}</th>
+                    <th>{{'actions' | translate}}</th>
                 </tr>
                 </thead>
                 <tbody>
