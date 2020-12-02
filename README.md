@@ -1,4 +1,4 @@
 UI views:
 
-![](video/todo.webm)
+![](video/todo.gif)
 
